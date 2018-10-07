@@ -1,13 +1,27 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use Blue\User;
+use Blue\ShoppingCart;
+use Blue\Product;
 
 class ShoppingCartTest extends TestCase
 {
-    public function testCase1()
+    private $shoppingCart;
+
+    public function setUp()
     {
         $user = new User('John Doe', 'john.doe@example.com');
-        $shoppingCart = new ShoppingCart($user);
+        $this->shoppingCart = new ShoppingCart($user);
+    }
+
+    public function tearDown()
+    {
+    }
+
+    public function testCase1()
+    {
+        $shoppingCart = $this->shoppingCart;
 
         $apple = new Product('Apple', 4.95);
         $shoppingCart->addProduct($apple);
@@ -21,8 +35,7 @@ class ShoppingCartTest extends TestCase
 
     public function testCase2()
     {
-        $user = new User('John Doe', 'john.doe@example.com');
-        $shoppingCart = new ShoppingCart($user);
+        $shoppingCart = $this->shoppingCart;
 
         $apple = new Product('Apple', 4.95);
         $shoppingCart->addProduct($apple);

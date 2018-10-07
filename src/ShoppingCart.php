@@ -1,5 +1,7 @@
 <?php
 
+namespace Blue;
+
 class ShoppingCart
 {
     private $user;

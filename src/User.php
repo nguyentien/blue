@@ -1,5 +1,7 @@
 <?php
 
+namespace Blue;
+
 class User
 {
     private $name;
